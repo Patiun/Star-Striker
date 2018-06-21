@@ -7,12 +7,13 @@ public class PlayerShip_Shoot : MonoBehaviour {
     public float fireRate;
     public float muzzleVelocity;
     public Transform gunBarrel;
-    public GameObject TEMP_bulletPrefab;
 
     private float timeLastFired;
+    private ObjectPooler objectPooler;
 
 	// Use this for initialization
 	void Start () {
+        objectPooler = ObjectPooler._sharedInstance;
         timeLastFired = Time.time - fireRate;
 	}
 
@@ -20,8 +21,7 @@ public class PlayerShip_Shoot : MonoBehaviour {
     {
         if (timeLastFired + fireRate < Time.time)
         {
-            GameObject newBullet = Instantiate(TEMP_bulletPrefab);
-            newBullet.transform.position = gunBarrel.position;
+            GameObject newBullet = objectPooler.SpawnFromPool("PlayerBullets",gunBarrel.transform.position,Quaternion.identity);
             newBullet.GetComponent<Rigidbody>().velocity = transform.up * muzzleVelocity;
             timeLastFired = Time.time;
         }
