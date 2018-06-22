@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour {
     public List<SpawnItem> spawnItems;
     public float boundSize; //Maybe tie into the world bound size?
     public float spawnRate;
+    public float spawnRateBuild;
     public float timeBetweenWaves;
     public float waveDuration;
 
@@ -42,6 +43,7 @@ public class EnemySpawner : MonoBehaviour {
             {
                 canSpawn = false;
                 waveDurationElapsed = 0f;
+                spawnRate *= 1 + spawnRateBuild * game.currentWave;
                 game.WaveOver();
             } else
             {
