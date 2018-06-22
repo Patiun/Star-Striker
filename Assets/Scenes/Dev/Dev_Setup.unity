@@ -311,7 +311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -112.399994, y: 2.6}
+  m_AnchoredPosition: {x: -112.400024, y: 2.6}
   m_SizeDelta: {x: 204.59998, y: 35.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &380718399
@@ -432,6 +432,12 @@ MonoBehaviour:
   - tag: Explosion
     prefab: {fileID: 1342095067958892, guid: 54655dd3ebe7a7f49b3ed2e163fa2974, type: 2}
     size: 50
+  - tag: HealthPacks
+    prefab: {fileID: 1227490430738372, guid: 106504593ba4caa40b452fc3489fd234, type: 2}
+    size: 10
+  - tag: Coins
+    prefab: {fileID: 1887472739558384, guid: 28b35c5d2af2c884e86355ea694ba143, type: 2}
+    size: 10
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,7 +1490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 151.4, y: 0}
+  m_AnchoredPosition: {x: 151.40002, y: 0}
   m_SizeDelta: {x: 276.7, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726372067
