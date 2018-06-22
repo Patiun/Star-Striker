@@ -4305,7 +4305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTiltAmount: 30
-  maxBoostStrength: 20
+  maxVelocity: 20
   autoDampenRate: 0.9
 --- !u!114 &114854091615984520
 MonoBehaviour:
@@ -4329,8 +4329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8a0538f6d8ff449943a5913e1485a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.3
+  fireRate: 6
   muzzleVelocity: 20
   gunBarrel: {fileID: 4082706426469140}
-  TEMP_bulletPrefab: {fileID: 1557835010144570, guid: 48cb873a68a780547b0763b3185e541e,
-    type: 2}

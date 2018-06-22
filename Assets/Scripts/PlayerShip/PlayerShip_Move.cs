@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShip_Move : MonoBehaviour {
 
     public float maxTiltAmount;
-    public float maxBoostStrength;
+    public float maxVelocity;
     public float autoDampenRate;
 
     private Rigidbody rb;
@@ -17,13 +17,7 @@ public class PlayerShip_Move : MonoBehaviour {
 	
     public void Boost(float amnt)
     {
-        if (amnt == 0)
-        {
-            rb.velocity = rb.velocity * autoDampenRate * Time.fixedDeltaTime;
-        } else
-        {
-            rb.AddForce(transform.right * amnt * maxBoostStrength);
-        }
+        rb.velocity = transform.right * amnt * maxVelocity;
         Tilt(amnt);
     }
 

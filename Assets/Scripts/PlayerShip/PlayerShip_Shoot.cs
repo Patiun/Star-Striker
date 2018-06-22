@@ -14,12 +14,12 @@ public class PlayerShip_Shoot : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         objectPooler = ObjectPooler._sharedInstance;
-        timeLastFired = Time.time - fireRate;
+        timeLastFired = Time.time - 1f/fireRate;
 	}
 
     public void Shoot()
     {
-        if (timeLastFired + fireRate < Time.time)
+        if (timeLastFired + 1f/fireRate < Time.time)
         {
             GameObject newBullet = objectPooler.SpawnFromPool("PlayerBullets",gunBarrel.transform.position,Quaternion.identity);
             newBullet.GetComponent<Rigidbody>().velocity = transform.up * muzzleVelocity;
