@@ -17,6 +17,7 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.up * speed;
+        curHP = maxHP;
     }
 
     // Update is called once per frame
@@ -40,13 +41,9 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
+        if (projectile != null)
         {
-            CollideWithPlayer();
-        }
-        else
-        {
-            IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
             curHP -= projectile.GetDamage();
             projectile.Die();
         }
@@ -60,6 +57,7 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
     public void OnObjectSpawn()
     {
         timeExisted = 0f;
+        curHP = maxHP;
         if (rb == null)
         {
             rb = GetComponent<Rigidbody>();

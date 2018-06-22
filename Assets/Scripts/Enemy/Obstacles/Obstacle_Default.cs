@@ -39,13 +39,8 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            CollideWithPlayer();
-        }
-        else
-        {
-            IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
+        IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
+        if (projectile != null) {
             curHP -= projectile.GetDamage();
             projectile.Die();
         }
