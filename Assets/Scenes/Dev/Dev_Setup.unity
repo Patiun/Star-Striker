@@ -438,6 +438,9 @@ MonoBehaviour:
   - tag: Coins
     prefab: {fileID: 1887472739558384, guid: 28b35c5d2af2c884e86355ea694ba143, type: 2}
     size: 10
+  - tag: EnemyShip_Slow
+    prefab: {fileID: 1197714374632098, guid: b0b32c72044dd724a9123f8689417e92, type: 2}
+    size: 50
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,12 +567,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSpawn: 0
   spawnItems:
-  - prefab: {fileID: 1671056355294742, guid: df9d63a261cdaab4094b1dcf5bf7e637, type: 2}
-    poolTag: EnemyShip_Basic
-    chance: 30
-  - prefab: {fileID: 1568688272009900, guid: e9cb521a701dd2f44bafa6604faf49d1, type: 2}
-    poolTag: Obstacles
+  - poolTag: EnemyShip_Basic
+    chance: 45
+  - poolTag: Obstacles
     chance: 60
+  - poolTag: EnemyShip_Slow
+    chance: 15
   boundSize: 20.5
   spawnRate: 0.5
   spawnRateBuild: 0.15

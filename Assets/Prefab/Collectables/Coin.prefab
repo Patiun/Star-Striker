@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 15
-  speed: 2.5
+  speed: 3
   rotationSpeed: 30
   timeAllowedToExist: 15
 --- !u!135 &135349115609294658

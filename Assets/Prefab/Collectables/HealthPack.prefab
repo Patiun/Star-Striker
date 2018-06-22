@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmount: 1
-  speed: 2.5
+  speed: 3
   timeAllowedToExist: 15
 --- !u!135 &135604038234000298
 SphereCollider:

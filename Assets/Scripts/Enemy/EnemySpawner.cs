@@ -13,7 +13,6 @@ public class EnemySpawner : MonoBehaviour {
     /// </summary>
     [System.Serializable]
     public class SpawnItem {
-        public GameObject prefab; //Object to spawn
         public string poolTag; //Tag for the pool of objects
         public float chance; //Chance the object is actually spawned
     }

@@ -11,7 +11,7 @@ public class EnemyShip_Basic : Abstract_EnemyShip,IObstacle,IPooledObject
     // Use this for initialization
     void Start()
     {
-
+        base.Init();
     }
 
     // Update is called once per frame
@@ -35,8 +35,12 @@ public class EnemyShip_Basic : Abstract_EnemyShip,IObstacle,IPooledObject
         IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
         if (projectile != null)
         {
-            AddScore();
             curHP -= projectile.GetDamage();
+            if (curHP <= 0)
+            {
+                AddScore();
+                Die();
+            }
             projectile.Die();
         }
     }
@@ -46,13 +50,7 @@ public class EnemyShip_Basic : Abstract_EnemyShip,IObstacle,IPooledObject
     /// </summary>
     public void OnObjectSpawn()
     {
-        timeExisted = 0f;
-        curHP = maxHP;
-        if (rb == null)
-        {
-            rb = GetComponent<Rigidbody>();
-        }
-        rb.velocity = transform.up * speed;
+        base.Init();
     }
 
     /// <summary>
@@ -60,6 +58,6 @@ public class EnemyShip_Basic : Abstract_EnemyShip,IObstacle,IPooledObject
     /// </summary>
     public void AddScore()
     {
-        game.AddScore(scoreValue);
+        base.game.AddScore(scoreValue);
     }
 }

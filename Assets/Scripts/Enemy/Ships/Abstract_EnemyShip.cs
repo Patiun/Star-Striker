@@ -16,10 +16,7 @@ public abstract class Abstract_EnemyShip : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        rb = GetComponent<Rigidbody>();
-        game = GameController._sharedInstance;
-        rb.velocity = transform.up * speed;
-        curHP = maxHP;
+        Init();
     }
 	
 	// Update is called once per frame
@@ -33,6 +30,24 @@ public abstract class Abstract_EnemyShip : MonoBehaviour {
         {
             Die();
         }
+    }
+
+    /// <summary>
+    /// Shared Initialization of the enemy ship
+    /// </summary>
+    protected void Init()
+    {
+        timeExisted = 0f;
+        curHP = maxHP;
+        if (game == null)
+        {
+            game = GameController._sharedInstance;
+        }
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+        rb.velocity = transform.up * speed;
     }
 
     /// <summary>
