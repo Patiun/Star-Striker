@@ -422,10 +422,16 @@ MonoBehaviour:
     size: 50
   - tag: EnemyShip_Basic
     prefab: {fileID: 1671056355294742, guid: df9d63a261cdaab4094b1dcf5bf7e637, type: 2}
-    size: 10
+    size: 50
   - tag: Obstacles
     prefab: {fileID: 1568688272009900, guid: e9cb521a701dd2f44bafa6604faf49d1, type: 2}
-    size: 10
+    size: 50
+  - tag: PlayerBulletDeath
+    prefab: {fileID: 1551925163733824, guid: 938b6a491b4dcaf4d8e7428ed98582fa, type: 2}
+    size: 50
+  - tag: Explosion
+    prefab: {fileID: 1342095067958892, guid: 54655dd3ebe7a7f49b3ed2e163fa2974, type: 2}
+    size: 50
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,13 +560,14 @@ MonoBehaviour:
   spawnItems:
   - prefab: {fileID: 1671056355294742, guid: df9d63a261cdaab4094b1dcf5bf7e637, type: 2}
     poolTag: EnemyShip_Basic
-    chance: 50
+    chance: 30
   - prefab: {fileID: 1568688272009900, guid: e9cb521a701dd2f44bafa6604faf49d1, type: 2}
     poolTag: Obstacles
-    chance: 50
+    chance: 60
   boundSize: 20.5
   spawnRate: 0.5
-  timeBetweenWaves: 10
+  spawnRateBuild: 0.15
+  timeBetweenWaves: 8
   waveDuration: 30
 --- !u!4 &907521197
 Transform:

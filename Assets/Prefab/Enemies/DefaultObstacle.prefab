@@ -188,7 +188,7 @@ MonoBehaviour:
   maxHP: 5
   curHP: 0
   speed: 4
-  timeAllowedToExist: 5
+  timeAllowedToExist: 8
   timeExisted: 0
   scoreValue: 30
   model: {fileID: 1009293358927480}

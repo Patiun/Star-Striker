@@ -4276,6 +4276,6 @@ MonoBehaviour:
   maxHP: 1
   curHP: 0
   speed: 12
-  timeAllowedToExist: 3
+  timeAllowedToExist: 4
   timeExisted: 0
   scoreValue: 50

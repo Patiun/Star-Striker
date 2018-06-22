@@ -41,33 +41,40 @@ public class EnemySpawner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (canSpawn) {
-            //Spawn Object
-            if (timeLastSpawned + 1f / spawnRate <= Time.time)
-            {
-                Spawn();
-            }
-            //Check Wave duraction
-            if (waveDurationElapsed >= waveDuration)
-            {
-                canSpawn = false;
-                waveDurationElapsed = 0f;
-                spawnRate *= 1 + spawnRateBuild * game.currentWave;
-                game.WaveOver();
-            } else
-            {
-                waveDurationElapsed += Time.deltaTime;
-            }
-        } else
+        if (!game.gameOver)
         {
-            if (timeSinceLastWave >= timeBetweenWaves)
+            if (canSpawn)
             {
-                timeSinceLastWave = 0f;
-                canSpawn = true;
-                game.WaveStart();
-            } else
+                //Spawn Object
+                if (timeLastSpawned + 1f / spawnRate <= Time.time)
+                {
+                    Spawn();
+                }
+                //Check Wave duraction
+                if (waveDurationElapsed >= waveDuration)
+                {
+                    canSpawn = false;
+                    waveDurationElapsed = 0f;
+                    spawnRate *= 1 + spawnRateBuild * game.currentWave;
+                    game.WaveOver();
+                }
+                else
+                {
+                    waveDurationElapsed += Time.deltaTime;
+                }
+            }
+            else
             {
-                timeSinceLastWave += Time.deltaTime;
+                if (timeSinceLastWave >= timeBetweenWaves)
+                {
+                    timeSinceLastWave = 0f;
+                    canSpawn = true;
+                    game.WaveStart();
+                }
+                else
+                {
+                    timeSinceLastWave += Time.deltaTime;
+                }
             }
         }
 	}
