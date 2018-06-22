@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     public int currentWave;
     public int maxLives;
     public int curLives;
+    public int score;
     public bool gameOver;
 
     private void Start()
@@ -45,5 +46,10 @@ public class GameController : MonoBehaviour {
     {
         gameOver = true;
         Debug.Log("Game Over!");
+    }
+
+    public void AddScore(int amount)
+    {
+        score += amount;
     }
 }

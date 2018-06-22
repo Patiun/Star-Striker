@@ -9,6 +9,7 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
     public float speed;
     public float timeAllowedToExist;
     public float timeExisted = 0f;
+    public int scoreValue = 50;
 
     private Rigidbody rb;
 
@@ -44,6 +45,7 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
         IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
         if (projectile != null)
         {
+            AddScore();
             curHP -= projectile.GetDamage();
             projectile.Die();
         }
@@ -63,5 +65,10 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
             rb = GetComponent<Rigidbody>();
         }
         rb.velocity = transform.up * speed;
+    }
+
+    public void AddScore()
+    {
+        GameController._sharedInstance.AddScore(scoreValue);
     }
 }

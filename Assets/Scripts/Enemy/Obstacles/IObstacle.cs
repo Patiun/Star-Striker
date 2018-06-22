@@ -6,4 +6,5 @@ public interface IObstacle{
 
     void CollideWithPlayer();
     void Die();
+    void AddScore();
 }

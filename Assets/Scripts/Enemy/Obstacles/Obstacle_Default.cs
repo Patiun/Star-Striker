@@ -9,6 +9,7 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
     public float speed;
     public float timeAllowedToExist;
     public float timeExisted = 0f;
+    public int scoreValue = 30;
 
     private Rigidbody rb;
 
@@ -28,6 +29,7 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
         }
         if (curHP <= 0)
         {
+            AddScore();
             Die();
         }
 	}
@@ -60,5 +62,10 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
             rb = GetComponent<Rigidbody>();
         }
         rb.velocity = transform.up * speed;
+    }
+
+    public void AddScore()
+    {
+        GameController._sharedInstance.AddScore(scoreValue);
     }
 }
