@@ -15,16 +15,18 @@ public class EnemySpawner : MonoBehaviour {
     public List<SpawnItem> spawnItems;
     public float boundSize; //Maybe tie into the world bound size?
     public float spawnRate;
-    public float TEMP_startDelay;
+    public int waveNumber;
+    public float timeBetweenWaves;
+    public float waveDuration;
 
     private float timeLastSpawned;
+    private float waveDurationElapsed;
+    private float timeSinceLastWave;
     private ObjectPooler objectPooler;
 
     // Use this for initialization
     void Start () {
         objectPooler = ObjectPooler._sharedInstance;
-            //TEMP
-        timeLastSpawned = Time.time + TEMP_startDelay;
 	}
 
     // Update is called once per frame
@@ -34,6 +36,25 @@ public class EnemySpawner : MonoBehaviour {
             if (timeLastSpawned + 1f / spawnRate <= Time.time)
             {
                 Spawn();
+            }
+            if (waveDurationElapsed >= waveDuration)
+            {
+                canSpawn = false;
+                waveDurationElapsed = 0f;
+            } else
+            {
+                waveDurationElapsed += Time.deltaTime;
+            }
+        } else
+        {
+            if (timeSinceLastWave >= timeBetweenWaves)
+            {
+                timeSinceLastWave = 0f;
+                canSpawn = true;
+                waveNumber++;
+            } else
+            {
+                timeSinceLastWave += Time.deltaTime;
             }
         }
 	}

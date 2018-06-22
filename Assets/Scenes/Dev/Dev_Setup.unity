@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f844e075b77b544a97a356938b6a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSpawn: 1
+  canSpawn: 0
   spawnItems:
   - prefab: {fileID: 1671056355294742, guid: df9d63a261cdaab4094b1dcf5bf7e637, type: 2}
     poolTag: EnemyShip_Basic
@@ -392,7 +392,9 @@ MonoBehaviour:
     chance: 50
   boundSize: 16
   spawnRate: 0.5
-  TEMP_startDelay: 2
+  waveNumber: 0
+  timeBetweenWaves: 10
+  waveDuration: 30
 --- !u!4 &907521197
 Transform:
   m_ObjectHideFlags: 0
