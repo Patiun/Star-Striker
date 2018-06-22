@@ -53,6 +53,7 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
 
     public void Die()
     {
+        ObjectPooler._sharedInstance.SpawnFromPool("Explosion", transform.position, transform.rotation);
         gameObject.SetActive(false);
     }
 

@@ -30,6 +30,7 @@ public class PlayerBulletBehavior : MonoBehaviour, IPooledObject, IProjectile {
 
     public void Die()
     {
+        ObjectPooler._sharedInstance.SpawnFromPool("PlayerBulletDeath", transform.position, transform.rotation);
         gameObject.SetActive(false);
     }
 }

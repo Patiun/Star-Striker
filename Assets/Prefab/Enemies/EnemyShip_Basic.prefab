@@ -4275,7 +4275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 1
   curHP: 0
-  speed: 17
+  speed: 12
   timeAllowedToExist: 3
   timeExisted: 0
   scoreValue: 50
