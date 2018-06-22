@@ -10,6 +10,7 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
     public float timeAllowedToExist;
     public float timeExisted = 0f;
     public int scoreValue = 30;
+    public GameObject model;
 
     private Rigidbody rb;
 
@@ -55,6 +56,7 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
 
     public void OnObjectSpawn()
     {
+        model.transform.rotation = Quaternion.Euler(Random.Range(-180, 180), Random.Range(-180, 180), Random.Range(-180, 180));
         timeExisted = 0f;
         curHP = maxHP;
         if (rb == null)

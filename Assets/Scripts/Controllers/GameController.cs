@@ -22,6 +22,14 @@ public class GameController : MonoBehaviour {
     public Text scoreText;
     public Text waveText;
 
+    private void Update()
+    {
+        if (Input.GetAxis("Escape") != 0)
+        {
+            Application.Quit();
+        }   
+    }
+
     private void Start()
     {
         curLives = maxLives;
