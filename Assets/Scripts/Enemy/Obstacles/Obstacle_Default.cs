@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
 
+    public float maxHP;
+    public float curHP;
     public float speed;
     public float timeAllowedToExist;
     public float timeExisted = 0f;
@@ -14,6 +16,7 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
 	void Start () {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.up * speed;
+        curHP = maxHP;
 	}
 	
 	// Update is called once per frame
@@ -23,16 +26,40 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
         {
             gameObject.SetActive(false);
         }
+        if (curHP <= 0)
+        {
+            Die();
+        }
 	}
+
+    public void Die()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            CollideWithPlayer();
+        }
+        else
+        {
+            IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
+            curHP -= projectile.GetDamage();
+            projectile.Die();
+        }
+    }
 
     public void CollideWithPlayer()
     {
-        gameObject.SetActive(false);
+        Die();
     }
 
     public void OnObjectSpawn()
     {
         timeExisted = 0f;
+        curHP = maxHP;
         if (rb == null)
         {
             rb = GetComponent<Rigidbody>();

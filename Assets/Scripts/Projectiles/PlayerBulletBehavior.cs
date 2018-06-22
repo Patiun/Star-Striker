@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBulletBehavior : MonoBehaviour, IPooledObject {
+public class PlayerBulletBehavior : MonoBehaviour, IPooledObject, IProjectile {
 
+    public int damage = 1;
     public float timeAllowedToExist;
     public float timeExisted = 0f;
 	
@@ -20,5 +21,15 @@ public class PlayerBulletBehavior : MonoBehaviour, IPooledObject {
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         timeExisted = 0f;
+    }
+
+    public int GetDamage()
+    {
+        return damage;
+    }
+
+    public void Die()
+    {
+        gameObject.SetActive(false);
     }
 }

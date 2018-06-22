@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
 {
-
+    public float maxHP;
+    public float curHP;
     public float speed;
     public float timeAllowedToExist;
     public float timeExisted = 0f;
@@ -26,9 +27,32 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
         {
             gameObject.SetActive(false);
         }
+        if (curHP <= 0)
+        {
+            Die();
+        }
     }
 
     public void CollideWithPlayer()
+    {
+        Die();
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            CollideWithPlayer();
+        }
+        else
+        {
+            IProjectile projectile = collision.gameObject.GetComponent<IProjectile>();
+            curHP -= projectile.GetDamage();
+            projectile.Die();
+        }
+    }
+
+    public void Die()
     {
         gameObject.SetActive(false);
     }
