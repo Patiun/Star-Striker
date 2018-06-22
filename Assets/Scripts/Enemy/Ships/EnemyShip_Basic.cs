@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip_Basic : MonoBehaviour,IObstacle
+public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
 {
 
     public float speed;
@@ -31,5 +31,15 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle
     public void CollideWithPlayer()
     {
         gameObject.SetActive(false);
+    }
+
+    public void OnObjectSpawn()
+    {
+        timeExisted = 0f;
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+        rb.velocity = transform.up * speed;
     }
 }

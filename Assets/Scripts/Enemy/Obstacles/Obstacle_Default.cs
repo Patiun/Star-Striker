@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle_Default : MonoBehaviour, IObstacle {
+public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
 
     public float speed;
     public float timeAllowedToExist;
@@ -28,5 +28,15 @@ public class Obstacle_Default : MonoBehaviour, IObstacle {
     public void CollideWithPlayer()
     {
         gameObject.SetActive(false);
+    }
+
+    public void OnObjectSpawn()
+    {
+        timeExisted = 0f;
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+        rb.velocity = transform.up * speed;
     }
 }

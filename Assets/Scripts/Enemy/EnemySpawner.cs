@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour {
     [System.Serializable]
     public class SpawnItem {
         public GameObject prefab;
+        public string poolTag;
         public float chance;
     }
 
@@ -17,9 +18,12 @@ public class EnemySpawner : MonoBehaviour {
     public float TEMP_startDelay;
 
     private float timeLastSpawned;
+    private ObjectPooler objectPooler;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        objectPooler = ObjectPooler._sharedInstance;
+            //TEMP
         timeLastSpawned = Time.time + TEMP_startDelay;
 	}
 
@@ -43,8 +47,7 @@ public class EnemySpawner : MonoBehaviour {
             float x = Random.Range(-boundSize, boundSize);
             Vector3 pos = transform.position;
             pos.x += x;
-            GameObject obj = Instantiate(spawnItems[ind].prefab);
-            obj.transform.position = pos;
+            objectPooler.SpawnFromPool(spawnItems[ind].poolTag, pos,transform.rotation);
             timeLastSpawned = Time.time;
         }
     }
