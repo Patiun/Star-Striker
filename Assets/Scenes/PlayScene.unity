@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4568043508279774, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -7.61
+      value: -7.82
       objectReference: {fileID: 0}
     - target: {fileID: 4568043508279774, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
       propertyPath: m_LocalPosition.z
@@ -438,6 +438,9 @@ MonoBehaviour:
   - tag: Coins
     prefab: {fileID: 1887472739558384, guid: 28b35c5d2af2c884e86355ea694ba143, type: 2}
     size: 10
+  - tag: EnemyShip_Slow
+    prefab: {fileID: 1197714374632098, guid: b0b32c72044dd724a9123f8689417e92, type: 2}
+    size: 50
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +546,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 907521197}
-  - component: {fileID: 907521196}
+  - component: {fileID: 907521198}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -551,30 +554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &907521196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 907521195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f844e075b77b544a97a356938b6a2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSpawn: 0
-  spawnItems:
-  - prefab: {fileID: 1671056355294742, guid: df9d63a261cdaab4094b1dcf5bf7e637, type: 2}
-    poolTag: EnemyShip_Basic
-    chance: 30
-  - prefab: {fileID: 1568688272009900, guid: e9cb521a701dd2f44bafa6604faf49d1, type: 2}
-    poolTag: Obstacles
-    chance: 60
-  boundSize: 20.5
-  spawnRate: 0.5
-  spawnRateBuild: 0.15
-  timeBetweenWaves: 8
-  waveDuration: 30
 --- !u!4 &907521197
 Transform:
   m_ObjectHideFlags: 0
@@ -588,6 +567,62 @@ Transform:
   m_Father: {fileID: 1080824851}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &907521198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 907521195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4225f2599ba274f9175b93bd961624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  formations:
+  - formation: {fileID: 11400000, guid: b2a67c9d047d7fc42866707720ce33b3, type: 2}
+    chance: 100
+  - formation: {fileID: 11400000, guid: 2bfdc3011fd489146be0e589bfdbf81e, type: 2}
+    chance: 80
+  - formation: {fileID: 11400000, guid: 69d039da41af9b7468bac816514ab2d4, type: 2}
+    chance: 70
+  - formation: {fileID: 11400000, guid: ff6bef8dbf135424fb083c7935dc9d42, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: cd0d965761adf2743b3b94130cd66386, type: 2}
+    chance: 60
+  - formation: {fileID: 11400000, guid: ef4c6282df56b0441ac6eb0111054b4f, type: 2}
+    chance: 60
+  - formation: {fileID: 11400000, guid: 2cbd7f0c6ac81ce43b918854339454a2, type: 2}
+    chance: 60
+  - formation: {fileID: 11400000, guid: 99445737d2692c74192b37a7b52c2411, type: 2}
+    chance: 60
+  - formation: {fileID: 11400000, guid: 6ab90d11d920eb1488fa21887e41f9a6, type: 2}
+    chance: 50
+  - formation: {fileID: 11400000, guid: 7a4a723666725b04eaf4d21ff810f35e, type: 2}
+    chance: 25
+  - formation: {fileID: 11400000, guid: 6acae2b0234b08046a224985550d4e69, type: 2}
+    chance: 60
+  - formation: {fileID: 11400000, guid: 0d286f10a53909f42a20ac1c2fbd99ed, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: a2f6bd0f884f4824dba3921db5caafcb, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: bbaa02d2b15e3be40a5c11eadc9e4869, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: ea0330ba4620be349b423aeedf51cf0b, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: f6c86f6534ce4094caaf5df49cf23b29, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: 71c5475c15183ba408b08c1a002f6d65, type: 2}
+    chance: 40
+  - formation: {fileID: 11400000, guid: f148dc3858e004942ae897d840027fa6, type: 2}
+    chance: 40
+  unitGap: 3
+  rowGap: 3
+  boundSize: 20
+  waveActive: 0
+  spawnRate: 0.3
+  spawnRateGrowth: 0.075
+  waveDuration: 30
+  timeBetweenWaves: 12
 --- !u!1 &936891487
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,10 +933,10 @@ RectTransform:
   m_Father: {fileID: 1126481417}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: -494, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1145365409
 MonoBehaviour:

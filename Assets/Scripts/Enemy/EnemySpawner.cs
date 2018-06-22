@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// DEPRICATED - Use EnemySpawnFormations
 /// Spawns the enemy objects and handles waves
 /// Author: Greg Kilmer
 /// </summary>
