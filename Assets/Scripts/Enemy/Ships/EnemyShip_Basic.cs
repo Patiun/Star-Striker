@@ -42,11 +42,20 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
     }
 
     /// <summary>
+    /// Drops a coin when shot down
+    /// </summary>
+    public void Drop()
+    {
+        ObjectPooler._sharedInstance.SpawnFromPool("Coins", transform.position, Quaternion.identity);
+    }
+
+    /// <summary>
     /// Handles what the ship does if it collides with a player
     /// </summary>
     public void CollideWithPlayer()
     {
-        Die();
+        ObjectPooler._sharedInstance.SpawnFromPool("Explosion", transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -67,6 +76,7 @@ public class EnemyShip_Basic : MonoBehaviour,IObstacle,IPooledObject
     public void Die()
     {
         ObjectPooler._sharedInstance.SpawnFromPool("Explosion", transform.position, transform.rotation);
+        Drop();
         gameObject.SetActive(false);
     }
 
