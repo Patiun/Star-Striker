@@ -88,4 +88,21 @@ public class GameController : MonoBehaviour {
         score += amount;
         scoreText.text = "Score: " + score;
     }
+
+    /// <summary>
+    /// Adds amount to the curLives
+    /// </summary>
+    /// <param name="amount"></param>
+    public void AddLife(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            curLives++;
+            if (curLives > maxLives)
+            {
+                curLives = maxLives;
+            }
+            lives[curLives-1].enabled = true;
+        }
+    }
 }

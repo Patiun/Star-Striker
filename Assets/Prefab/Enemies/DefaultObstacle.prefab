@@ -192,6 +192,9 @@ MonoBehaviour:
   timeExisted: 0
   scoreValue: 30
   model: {fileID: 1009293358927480}
+  droppable:
+  - HealthPacks
+  dropChance: 100
 --- !u!135 &135085015187601306
 SphereCollider:
   m_ObjectHideFlags: 1

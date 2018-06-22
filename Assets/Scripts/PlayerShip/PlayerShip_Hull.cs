@@ -23,6 +23,14 @@ public class PlayerShip_Hull : MonoBehaviour {
         {
             obstacle.CollideWithPlayer();
             Die();
+            return;
+        }
+        //If the player ship collides with a collectable
+        ICollectable collectable = collision.gameObject.GetComponent<ICollectable>();
+        if (collectable != null)
+        {
+            collectable.PickUp();
+            return;
         }
     }
 

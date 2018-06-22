@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -432,6 +432,9 @@ MonoBehaviour:
   - tag: Explosion
     prefab: {fileID: 1342095067958892, guid: 54655dd3ebe7a7f49b3ed2e163fa2974, type: 2}
     size: 50
+  - tag: HealthPacks
+    prefab: {fileID: 1227490430738372, guid: 106504593ba4caa40b452fc3489fd234, type: 2}
+    size: 10
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0

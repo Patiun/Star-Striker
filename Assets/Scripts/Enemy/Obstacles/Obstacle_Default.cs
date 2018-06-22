@@ -15,6 +15,8 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
     public float timeExisted = 0f; //Time the obstacle has existed in the scene
     public int scoreValue; //Score the obstacle is worth
     public GameObject model; //Asteroid model for the object
+    public List<string> droppable; //List of tags for ObjectPool that can be dropped
+    public float dropChance; //Chance that something is dropped when this dies
     
     private Rigidbody rb; //Reference to the object's RigidBody
 
@@ -45,7 +47,19 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
     public void Die()
     {
         ObjectPooler._sharedInstance.SpawnFromPool("Explosion", transform.position, transform.rotation);
+        if (Random.Range(0, 100f) <= dropChance)
+        {
+            Drop();
+        }
         gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Drops a random object from the list of droppable objects
+    /// </summary>
+    public void Drop()
+    {
+        ObjectPooler._sharedInstance.SpawnFromPool(droppable[Random.Range(0, droppable.Count)], transform.position, Quaternion.identity);
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -63,7 +77,8 @@ public class Obstacle_Default : MonoBehaviour, IObstacle, IPooledObject {
     /// </summary>
     public void CollideWithPlayer()
     {
-        Die();
+        ObjectPooler._sharedInstance.SpawnFromPool("Explosion", transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 
     /// <summary>
