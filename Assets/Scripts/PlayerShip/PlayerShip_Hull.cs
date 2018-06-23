@@ -8,6 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerShip_Hull : MonoBehaviour {
 
+    public GameObject shield;
     private GameController game; //Reference the GameController singleton
 
     public void Start()
@@ -44,5 +45,15 @@ public class PlayerShip_Hull : MonoBehaviour {
             Debug.Log("You Lose!");
             gameObject.SetActive(false);
         }
+    }
+
+    public void ActivateShield()
+    {
+        shield.SetActive(true);
+    }
+
+    public void DeactivateShield()
+    {
+        shield.SetActive(false);
     }
 }

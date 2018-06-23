@@ -23,10 +23,14 @@ public class GameController : MonoBehaviour {
     public int curLives; //Amount of lives the player currently has
     public int score; //Score the player currently has
     public bool gameOver; //Whether or not the game is over
+    public GameObject player; //The current playership
+    public bool shieldActive;
+    public int shieldStrength;
     //UI Elements
     public List<Image> lives; //Images representing player lives
     public Text scoreText; //Text to show the score
     public Text waveText; //Text to show the wave
+    public Image shieldIndicator;
 
     private void Update()
     {
@@ -64,11 +68,22 @@ public class GameController : MonoBehaviour {
     /// </summary>
     public void PlayerDeath()
     {
-        curLives--;
-        lives[curLives].enabled = false;
-        if (curLives <= 0)
+        if (shieldActive)
         {
-            GameOver();
+            shieldStrength--;
+            if (shieldStrength <= 0)
+            {
+                DeactivateShield();
+            }
+        }
+        else
+        {
+            curLives--;
+            lives[curLives].enabled = false;
+            if (curLives <= 0)
+            {
+                GameOver();
+            }
         }
     }
 
@@ -106,5 +121,22 @@ public class GameController : MonoBehaviour {
             }
             lives[curLives-1].enabled = true;
         }
+    }
+
+    public void ActivateShield(int shieldAmount)
+    {
+        shieldActive = true;
+        if (shieldStrength < shieldAmount) {
+            shieldStrength = shieldAmount;
+        }
+        player.GetComponent<PlayerShip_Hull>().ActivateShield();
+        shieldIndicator.enabled = true;
+    }
+
+    public void DeactivateShield()
+    {
+        shieldActive = false;
+        player.GetComponent<PlayerShip_Hull>().DeactivateShield();
+        shieldIndicator.enabled = false;
     }
 }
