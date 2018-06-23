@@ -1231,7 +1231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &490836492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3637,6 +3637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 6e11f64e10f3efa4eb3784cd33b1f64a, type: 2}
   resolutionDropdown: {fileID: 1866977218}
+  fullScreenToggle: {fileID: 490836493}
 --- !u!1 &1637290574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4362,7 +4363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1866977217
 RectTransform:
   m_ObjectHideFlags: 0
