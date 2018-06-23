@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -546,7 +546,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 907521197}
-  - component: {fileID: 907521196}
   - component: {fileID: 907521198}
   m_Layer: 0
   m_Name: Spawner
@@ -555,30 +554,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &907521196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 907521195}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f844e075b77b544a97a356938b6a2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSpawn: 0
-  spawnItems:
-  - poolTag: EnemyShip_Basic
-    chance: 45
-  - poolTag: Obstacles
-    chance: 60
-  - poolTag: EnemyShip_Slow
-    chance: 15
-  boundSize: 20.5
-  spawnRate: 0.5
-  spawnRateBuild: 0.15
-  timeBetweenWaves: 8
-  waveDuration: 30
 --- !u!4 &907521197
 Transform:
   m_ObjectHideFlags: 0

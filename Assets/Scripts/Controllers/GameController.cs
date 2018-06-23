@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -31,7 +32,8 @@ public class GameController : MonoBehaviour {
     {
         if (Input.GetAxis("Escape") != 0)
         {
-            Application.Quit();
+            //Add are you sure
+            SceneManager.LoadScene(0);
         }   
     }
 
