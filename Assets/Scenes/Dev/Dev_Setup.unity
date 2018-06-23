@@ -90,7 +90,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -441,6 +441,9 @@ MonoBehaviour:
   - tag: EnemyShip_Slow
     prefab: {fileID: 1197714374632098, guid: b0b32c72044dd724a9123f8689417e92, type: 2}
     size: 50
+  - tag: Mine_Basic
+    prefab: {fileID: 1043857310948438, guid: 83a1ef05a4c4ce8418eb6221a2f39c8d, type: 2}
+    size: 150
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +564,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907521195}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 12.88, z: 0}
+  m_LocalPosition: {x: 0, y: 32.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1080824851}
@@ -622,7 +625,8 @@ MonoBehaviour:
   spawnRate: 0.3
   spawnRateGrowth: 0.075
   waveDuration: 30
-  timeBetweenWaves: 12
+  timeBetweenWaves: 8
+  timeToEndWave: 15
 --- !u!1 &936891487
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,7 @@ public class EnemySpawnerFormations : MonoBehaviour {
     public float spawnRateGrowth;
     public float waveDuration;
     public float timeBetweenWaves;
+    public float timeToEndWave; //Time after the spawner says it finished spawing to actually end the wave
 
     private float nextSpawnTime;
     private float waveEndTime;
@@ -77,7 +78,13 @@ public class EnemySpawnerFormations : MonoBehaviour {
     private void EndWave()
     {
         waveActive = false;
-        nextWaveStart = Time.time + timeBetweenWaves;
+        nextWaveStart = Time.time + timeBetweenWaves + timeToEndWave;
+        StartCoroutine(DelayEndWave());
+    }
+
+    private IEnumerator DelayEndWave()
+    {
+        yield return new WaitForSeconds(timeToEndWave);
         game.WaveOver();
     }
 

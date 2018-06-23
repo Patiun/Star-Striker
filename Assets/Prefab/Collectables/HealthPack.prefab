@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthAmount: 1
   speed: 3
-  timeAllowedToExist: 15
+  timeAllowedToExist: 17
 --- !u!135 &135604038234000298
 SphereCollider:
   m_ObjectHideFlags: 1

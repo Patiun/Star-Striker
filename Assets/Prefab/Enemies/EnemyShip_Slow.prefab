@@ -4276,6 +4276,9 @@ MonoBehaviour:
   maxHP: 8
   curHP: 0
   speed: 6
-  timeAllowedToExist: 15
+  timeAllowedToExist: 17
   timeExisted: 0
   scoreValue: 150
+  canSpawnMine: 1
+  mineRate: 0.5
+  distanceBehind: 1

@@ -8,16 +8,37 @@ using UnityEngine;
 /// </summary>
 public class EnemyShip_Basic : Abstract_EnemyShip,IObstacle,IPooledObject
 {
+    public bool canSpawnMine;
+    public float mineRate;
+    public float distanceBehind;
+
+    private float timeForNextMine;
+
     // Use this for initialization
     void Start()
     {
         base.Init();
+        timeForNextMine = Time.time;
     }
 
     // Update is called once per frame
     new void Update()
     {
         base.Update();
+        if (canSpawnMine) {
+            if (Time.time >= timeForNextMine)
+            {
+                LayMine();
+            }
+        }
+    }
+
+    public void LayMine()
+    {
+        Vector3 pos = transform.position;
+        pos.y += distanceBehind;
+        ObjectPooler._sharedInstance.SpawnFromPool("Mine_Basic", pos,Quaternion.identity);
+        timeForNextMine = Time.time + 1f / mineRate;
     }
 
     /// <summary>
@@ -51,6 +72,7 @@ public class EnemyShip_Basic : Abstract_EnemyShip,IObstacle,IPooledObject
     public void OnObjectSpawn()
     {
         base.Init();
+        timeForNextMine = Time.time;
     }
 
     /// <summary>

@@ -4276,6 +4276,9 @@ MonoBehaviour:
   maxHP: 1
   curHP: 0
   speed: 10
-  timeAllowedToExist: 4
+  timeAllowedToExist: 6
   timeExisted: 0
   scoreValue: 50
+  mineRate: 0
+  distanceBehind: 0
+  timeForNextMine: 0
