@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetAxis("Escape") != 0 && !pauseMenu.isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !pauseMenu.isPaused)
         {
             //Add are you sure
             pauseMenu.Pause();
