@@ -120,6 +120,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: gunBarrels.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4568043508279774, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -152,10 +157,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1533068058265344, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: gunBarrels.Array.data[0]
+      value: 
+      objectReference: {fileID: 1116886460}
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: gunBarrels.Array.data[1]
+      value: 
+      objectReference: {fileID: 1098759605}
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: gunBarrels.Array.data[2]
+      value: 
+      objectReference: {fileID: 1960309449}
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: gunBarrels.Array.data[3]
+      value: 
+      objectReference: {fileID: 863837386}
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: gunBarrels.Array.data[4]
+      value: 
+      objectReference: {fileID: 1754098733}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
   m_IsPrefabParent: 0
@@ -224,6 +250,11 @@ Transform:
   m_Father: {fileID: 895379021}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &187887627 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1533068058265344, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+    type: 2}
+  m_PrefabInternal: {fileID: 41168673}
 --- !u!1 &266882816
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +317,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 379324390}
+  - component: {fileID: 379324392}
+  - component: {fileID: 379324391}
   m_Layer: 5
   m_Name: Lives
   m_TagString: Untagged
@@ -311,9 +344,42 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -112.400024, y: 2.6}
-  m_SizeDelta: {x: 204.59998, y: 35.3}
+  m_AnchoredPosition: {x: -66.09, y: 2.6}
+  m_SizeDelta: {x: 111.97, y: 35.3}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &379324391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 379324389}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.98798966, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &379324392
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 379324389}
 --- !u!1 &380718399
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +507,17 @@ MonoBehaviour:
   - tag: EnemyShip_Slow
     prefab: {fileID: 1197714374632098, guid: b0b32c72044dd724a9123f8689417e92, type: 2}
     size: 50
+  - tag: Mine_Basic
+    prefab: {fileID: 1043857310948438, guid: 83a1ef05a4c4ce8418eb6221a2f39c8d, type: 2}
+    size: 150
+  - tag: Shield_Basic
+    prefab: {fileID: 1485949654771874, guid: 5c3f6dc5fefb70e4a81ae1e06686e9df, type: 2}
+    size: 50
+--- !u!4 &863837386 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4690581466978210, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+    type: 2}
+  m_PrefabInternal: {fileID: 41168673}
 --- !u!1 &884067592
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +638,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 907521195}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 12.88, z: 0}
+  m_LocalPosition: {x: 0, y: 32.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1080824851}
@@ -622,7 +699,8 @@ MonoBehaviour:
   spawnRate: 0.3
   spawnRateGrowth: 0.075
   waveDuration: 30
-  timeBetweenWaves: 12
+  timeBetweenWaves: 8
+  timeToEndWave: 15
 --- !u!1 &936891487
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +842,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1098759605 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4836108435575938, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+    type: 2}
+  m_PrefabInternal: {fileID: 41168673}
+--- !u!4 &1116886460 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4171879277655954, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+    type: 2}
+  m_PrefabInternal: {fileID: 41168673}
 --- !u!1 &1119246208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1370,7 @@ GameObject:
   - component: {fileID: 1545053902}
   - component: {fileID: 1545053903}
   m_Layer: 0
-  m_Name: GameState
+  m_Name: GameController
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1316,13 +1404,19 @@ MonoBehaviour:
   maxLives: 3
   curLives: 0
   score: 0
+  currentUpgrade: 0
+  upgradeThresholds: d0070000a00f0000581b0000f82a0000803e0000
   gameOver: 0
+  player: {fileID: 187887627}
+  shieldActive: 0
+  shieldStrength: 0
   lives:
   - {fileID: 1338682053}
   - {fileID: 1401867578}
   - {fileID: 1119246210}
   scoreText: {fileID: 1726372067}
   waveText: {fileID: 1145365409}
+  shieldIndicator: {fileID: 379324391}
 --- !u!1 &1608788565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,3 +1661,13 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1726372065}
+--- !u!4 &1754098733 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4437723946295082, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+    type: 2}
+  m_PrefabInternal: {fileID: 41168673}
+--- !u!4 &1960309449 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4627047872987796, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+    type: 2}
+  m_PrefabInternal: {fileID: 41168673}
