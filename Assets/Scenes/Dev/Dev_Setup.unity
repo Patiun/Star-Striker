@@ -182,6 +182,10 @@ Prefab:
       propertyPath: gunBarrels.Array.data[4]
       value: 
       objectReference: {fileID: 1754098733}
+    - target: {fileID: 1144682168256164, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
   m_IsPrefabParent: 0
@@ -565,6 +569,13 @@ GameObject:
   m_PrefabParentObject: {fileID: 1533068058265344, guid: 0172287d64c830e4f98e5f2cecdf4a36,
     type: 2}
   m_PrefabInternal: {fileID: 41168673}
+--- !u!81 &187887628
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187887627}
+  m_Enabled: 1
 --- !u!1 &258412874
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2302,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1338682051}
+--- !u!1001 &1395357977
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4896864836631362, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d6057b4cb90ba1743abcf70696c787ae, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1401867576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,7 +2827,6 @@ GameObject:
   - component: {fileID: 1718387884}
   - component: {fileID: 1718387883}
   - component: {fileID: 1718387882}
-  - component: {fileID: 1718387881}
   - component: {fileID: 1718387885}
   m_Layer: 0
   m_Name: Main Camera
@@ -2783,13 +2835,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1718387881
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1718387880}
-  m_Enabled: 1
 --- !u!124 &1718387882
 Behaviour:
   m_ObjectHideFlags: 0
