@@ -114,7 +114,7 @@ public class GameController : MonoBehaviour {
     {
         score += amount;
         scoreText.text = "Score: " + score;
-        if (score > upgradeThresholds[currentUpgrade] && currentUpgrade < upgradeThresholds.Length)
+        if (currentUpgrade < upgradeThresholds.Length && score > upgradeThresholds[currentUpgrade])
         {
             player.GetComponent<PlayerShip_Shoot>().UpgradeFireType();
             currentUpgrade++;

@@ -820,7 +820,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -66.09, y: 2.6}
+  m_AnchoredPosition: {x: -66.089966, y: 2.6}
   m_SizeDelta: {x: 111.97, y: 35.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379324391
@@ -979,7 +979,7 @@ MonoBehaviour:
     size: 10
   - tag: Coins
     prefab: {fileID: 1887472739558384, guid: 28b35c5d2af2c884e86355ea694ba143, type: 2}
-    size: 10
+    size: 150
   - tag: EnemyShip_Slow
     prefab: {fileID: 1197714374632098, guid: b0b32c72044dd724a9123f8689417e92, type: 2}
     size: 50
@@ -2618,7 +2618,7 @@ MonoBehaviour:
   curLives: 0
   score: 0
   currentUpgrade: 0
-  upgradeThresholds: d0070000a00f0000581b0000f82a0000803e0000
+  upgradeThresholds: d0070000a00f0000581b0000f82a0000
   gameOver: 0
   player: {fileID: 187887627}
   shieldActive: 0
