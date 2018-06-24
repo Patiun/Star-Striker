@@ -34,19 +34,24 @@ public class GameController : MonoBehaviour {
     public Text waveText; //Text to show the wave
     public Image shieldIndicator;
     public GameOverMenu gameOverMenu;
+    public PauseMenu pauseMenu;
 
     private void Update()
     {
-        if (Input.GetAxis("Escape") != 0)
+        if (Input.GetAxis("Escape") != 0 && !pauseMenu.isPaused)
         {
             //Add are you sure
-            SceneManager.LoadScene(0);
+            pauseMenu.Pause();
         }   
     }
 
     private void Start()
     {
         curLives = maxLives;
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     /// <summary>
