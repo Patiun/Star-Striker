@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour {
     public int maxLives; //Maximum lives the player can have
     public int curLives; //Amount of lives the player currently has
     public int score; //Score the player currently has
+    public int currentUpgrade = 0;
+    public int[] upgradeThresholds;
     public bool gameOver; //Whether or not the game is over
     public GameObject player; //The current playership
     public bool shieldActive;
@@ -104,6 +106,11 @@ public class GameController : MonoBehaviour {
     {
         score += amount;
         scoreText.text = "Score: " + score;
+        if (score > upgradeThresholds[currentUpgrade] && currentUpgrade < upgradeThresholds.Length)
+        {
+            player.GetComponent<PlayerShip_Shoot>().UpgradeFireType();
+            currentUpgrade++;
+        }
     }
 
     /// <summary>
