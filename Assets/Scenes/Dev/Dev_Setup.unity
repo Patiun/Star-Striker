@@ -186,6 +186,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114226165207870426, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: maxTiltAmount
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114863741786393218, guid: 0172287d64c830e4f98e5f2cecdf4a36,
+        type: 2}
+      propertyPath: fireRate
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0172287d64c830e4f98e5f2cecdf4a36, type: 2}
   m_IsPrefabParent: 0
