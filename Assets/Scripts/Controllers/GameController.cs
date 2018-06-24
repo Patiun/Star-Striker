@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour {
     public Text scoreText; //Text to show the score
     public Text waveText; //Text to show the wave
     public Image shieldIndicator;
+    public GameOverMenu gameOverMenu;
 
     private void Update()
     {
@@ -96,6 +97,8 @@ public class GameController : MonoBehaviour {
     {
         gameOver = true;
         waveText.text = "Game Over";
+        player.SetActive(false);
+        gameOverMenu.GameOver(score);
     }
 
     /// <summary>
